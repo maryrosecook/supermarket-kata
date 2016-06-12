@@ -24,15 +24,12 @@
 #  * zeus: 'zeus rspec' (requires the server to be started separately)
 #  * 'just' rspec: 'rspec'
 
-guard :rspec, cmd: "bundle exec rspec" do
+guard :rspec, cmd: "bundle exec rspec --tag focus" do
   require "guard/rspec/dsl"
   dsl = Guard::RSpec::Dsl.new(self)
 
-  # Feel free to open issues for suggestions and improvements
-
   # RSpec files
   rspec = dsl.rspec
-  p rspec.spec_support
   watch(rspec.spec_helper) { rspec.spec_dir }
   watch(rspec.spec_support) { rspec.spec_dir }
   watch(rspec.spec_files)

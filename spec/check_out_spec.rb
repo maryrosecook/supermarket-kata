@@ -16,7 +16,8 @@ describe Supermarket::CheckOut do
   end
 
   describe "total" do
-    let(:subject) { Supermarket::CheckOut.new(RULES, Supermarket::Buckets.new) }
+    let(:subject) { Supermarket::CheckOut.new(Supermarket::RULES,
+                                              Supermarket::Buckets.new) }
 
     it "should get zero for zero items" do
       expect(subject.total).to eq(0)
