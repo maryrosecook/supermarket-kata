@@ -6,10 +6,10 @@ module Supermarket
 
     public
 
-    def initialize(base_price, discount_count, discount_price)
-      @base_price = base_price
-      @discount_count = discount_count
-      @discount_price = discount_price
+    def initialize(price_data)
+      @base_price = price_data[:base_price]
+      @discount_count = price_data[:discount_count]
+      @discount_price = price_data[:discount_price]
     end
 
     def total(count)
